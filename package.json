@@ -1,0 +1,59 @@
+{
+  "name": "fswd-lab-3",
+  "version": "1.0.0",
+  "description": "Full Stack Web Development - Lab 5: Intro to Angular",
+  "repository": "github:betamore/fswd-lab-3",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "nyc": "NODE_ENV=test nyc mocha",
+    "test": "npm run lint && npm run nyc",
+    "dev": "NODE_ENV=development nodemon ./lib/index.js",
+    "coverage": "opn coverage/lcov-report/index.html",
+    "start": "node ./lib/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-webpack": "0.0.6",
+    "css-loader": "^0.28.4",
+    "eslint": "^3.15.0",
+    "exports-loader": "^0.6.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.2",
+    "imports-loader": "^0.7.1",
+    "jquery": "^3.2.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.0.2",
+    "opn-cli": "^3.1.0",
+    "style-loader": "^0.18.2",
+    "supertest": "^3.0.0",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.6.1",
+    "webpack-dev-middleware": "^1.10.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.13.4",
+    "morgan": "^1.8.0",
+    "pug": "^2.0.0-rc.2"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.7",
+      "css": "github:systemjs/plugin-css@^0.1.27",
+      "jquery": "npm:jquery@^3.1.0"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  }
+}
