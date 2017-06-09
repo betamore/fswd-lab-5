@@ -13,3 +13,24 @@ block body
   .form-group
     input.form-control(type="text" name="newTodo")
     button.btn.btn-primary#add Add Button
+
+  div(ng-controller="TodoListController as ctrl")
+    ul
+      li(ng-repeat="todo in ctrl.todoList") {{ todo.name | toUpper }} on {{ todo.createdAt | date:'medium' }}
+    input(name="newTodo" type="text" ng-model="ctrl.newTodo")
+    button(ng-click="ctrl.addTodo(ctrl.newTodo); ctrl.newTodo = ''") Add
+
+  div(ng-controller="TodoListController as ctrl2")
+    p There are {{ ctrl2.todoList.length }} tasks to perform.
+
+  counter-directive(name="The first!")
+  counter-directive(name="The best")
+  counter-directive(name="The last one")
+
+  div(ng-init="todoList = ['Groceries', 'Gas', 'Car Payment']")
+    h3 Todo list (filter on: {{ filterBy }})
+    input(type="text" ng-model="newTodo")
+    button(ng-click="todoList.push(newTodo); newTodo = 'Something different'") Add Todo
+    input(type="text" ng-model="filterBy")
+    ul
+      li(ng-repeat="todo in todoList | filter:filterBy track by $index") {{ todo }}
